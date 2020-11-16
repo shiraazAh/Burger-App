@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Aux from '../../../hoc/Aux/Aux';
 import Button from '../../UI/Buttons/Button';
+import classes from './orderSummary.css';
 
 class OrderSummary extends Component {
 
@@ -9,7 +9,7 @@ class OrderSummary extends Component {
             { return <li key={igKey}><span style={{textTransform: 'capitalize'}}>{igKey}:</span> {this.props.ingredients[igKey]}</li>})
 
         return (
-            <Aux>
+            <div className={classes.OrderSummary}>
             <h3>Your Order</h3>
             <p>A Delicious burger with the following ingredients:</p>
             <ul>
@@ -20,7 +20,7 @@ class OrderSummary extends Component {
             
             <Button clicked={this.props.purchaseCancel} btnType="Danger">CANCEL</Button>
             <Button clicked={this.props.purchaseContinue} btnType="Success">CONTINUE</Button>
-            </Aux>
+            </div>
         )
     }
 }

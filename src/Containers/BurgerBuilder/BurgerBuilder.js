@@ -13,7 +13,7 @@ import WithErrorHandler from '../../hoc/withErrorHandler/withError';
 import * as actions from '../../store/actions/index.js';
 
 
-class BurgerBuilder extends Component {
+export class BurgerBuilder extends Component {
 
     state = {
         purchasing: false,

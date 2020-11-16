@@ -4,7 +4,9 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #703B09;
+    background-image: linear-gradient(to right bottom, #FBDB89, #f2ad82);
+    background-size: cover;
+    background-repeat: no-repeat#f2ad82;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -1,8 +1,20 @@
 .BuildControl {
+    align-items: center;
+    margin: 5px 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #ffd3b7;
+    padding: 5px;
+    width: 300px;
+}
+
+.all {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px 0;
+    width: 250px;
+    flex-direction: row;
+    margin: auto;
 }
 
 .BuildControl button {
@@ -10,15 +22,16 @@
     font: inherit;
     padding: 5px;
     margin: 0 5px;
-    width: 80px;
-    border: 1px solid #AA6817;
+    width: 60px;
+    border: 1px solid #ffffff;
     cursor: pointer;
     outline: none;
+    border-radius: 5px;
 }
 
 .BuildControl button:disabled {
     background-color: #AC9980;
-    border: 1px solid #7E7365;
+    border: 1px solid #ffffff;
     color: #ccc;
     cursor: default;
 }
@@ -31,17 +44,18 @@
 
 .Label {
     padding: 10px;
-    font-weight: bold;
     width: 80px;
+    color: #F59A83;
 }
 
 .BuildControl .Less {  
-    background-color: #D39952;
+    background-color: #F48982;
     color: white;
 }
 
 .BuildControl .More {
-    background-color: #8F5E1E;
+    background-color: #FBDB89;
+    font-size: 16px;
     color: white;
 }
 
@@ -53,4 +67,12 @@
 .BuildControl .More:hover,.BuildControl .More:active {
     background-color: #99703F;
     color: white;
+}
+
+.numberBox {
+    background-color: white;
+    width: 15px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
 }

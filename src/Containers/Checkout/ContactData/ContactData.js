@@ -8,6 +8,7 @@ import Input from '../../../Components/UI/Input/Input'
 import axios from '../../../axios-order';
 import * as orderActions from '../../../store/actions/index'
 import withErrorHandler from '../../../hoc/withErrorHandler/withError';
+import { updateObject, checkValidation } from '../../../shared/utility'; 
 
 class ContactData extends Component {
 
@@ -96,31 +97,8 @@ class ContactData extends Component {
 
     }
 
-    checkValidation = (value, rules) => {
-        let isValid = true;
-
-        if(!rules) {
-            return true;
-        }
-
-        if (rules.required) {
-            isValid = value.trim() !== '' && isValid;
-        } 
-
-        if (rules.minLength) {
-            isValid = value.length >= rules.minLength && isValid;
-        }
-
-        if (rules.maxLength) {
-            isValid = value.length <= rules.maxLength && isValid;
-        }
-
-        return isValid;
-    }
-
     orderHandler = (e) => {
         e.preventDefault();
-        console.log(this.props.ingredients, this.props.price)
 
         const formData = {}
 
@@ -139,19 +117,20 @@ class ContactData extends Component {
     }
 
     inputHandler = (event, inputId) => {
-        const updatedOrderForm = {...this.state.orderForm};
-        const updatedForm = {...updatedOrderForm[inputId]};
-        updatedForm.value = event.target.value;
-        updatedForm.valid = this.checkValidation(updatedForm.value, updatedForm.validation);
-        updatedForm.touched = true;
-        updatedOrderForm[inputId] = updatedForm;
+        const updatedForm = updateObject(this.state.orderForm[inputId], {
+            value: event.target.value,
+            valid: checkValidation(event.target.value, this.state.orderForm[inputId].validation),
+            touched: true
+        });
+        const updatedOrderForm = updateObject(this.state.orderForm, {
+            [inputId]: updatedForm
+        });
 
         let isFormValid = true;
         for (let inputId in updatedOrderForm) {
             isFormValid = updatedOrderForm[inputId].valid && isFormValid;
         }
 
-        console.log(isFormValid)
         this.setState({orderForm: updatedOrderForm, isFormValid: isFormValid})
     }
 

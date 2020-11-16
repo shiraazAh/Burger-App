@@ -1,24 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat;&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap');
+
+
 .BuildControls {
     width: 100%;
-    background-color: #CF8F2E;
     display: flex;
     flex-flow: column;
     align-items: center;
     box-shadow: 0px 2px 1px #ccc;
+    border-radius: 30px;
     margin: auto;
     padding: 10px 0;
+    font-family: 'Nunito';
 }
 
 .OrderButton {
-    background-color: #DAD735;
+    background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
     outline: none;
     cursor: pointer;
-    border: 1px solid #966909;
-    color: #966909;
+    border: 1px solid #ffffff;
+    color: White;
     font-family: inherit;
     font-size: 1.2em;
     padding: 15px 30px;
-    box-shadow: 2px 2px 2px #966909;
+    margin-top: 20px;
+    border-radius: 10px;
 }
 
 .OrderButton:hover, .OrderButton:active {
@@ -28,15 +34,43 @@
 }
 
 .OrderButton:disabled {
-    background-color: #C7C6C6;
+    background-image: linear-gradient(to right bottom, #f8eac5, #f8c4c0);;
     cursor: not-allowed;
-    border: 1px solid #ccc;
+    border: 1px solid #fff;
     color: #888888;
 }
 
 .OrderButton:not(:disabled) {
     animation: enable 0.3s linear;
 }
+ .tinyBox {
+     width: 218px;
+     background-color: #fff3d4;
+     margin: auto;
+     margin-bottom: 10px;
+     text-align: center;
+     border-radius: 20px;
+     color: #F59A83;
+     font-family: 'Nunito';
+     padding: 1px;
+ }
+
+ .currentPriceBox {
+    padding: 18px;
+    border-right: 1px solid;
+    text-transform: uppercase;
+    font-size: 14px;
+    background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+    color: #ffffff;
+    border-radius: 20px;
+    
+ }
+
+ .moneyBox {
+    font-family: inherit;
+     padding: 14px;
+ }
+
 
 @keyframes enable {
     0% {
