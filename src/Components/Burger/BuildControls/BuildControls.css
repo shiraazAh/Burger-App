@@ -7,7 +7,6 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    box-shadow: 0px 2px 1px #ccc;
     border-radius: 30px;
     margin: auto;
     padding: 10px 0;
@@ -44,7 +43,6 @@
     animation: enable 0.3s linear;
 }
  .tinyBox {
-     width: 218px;
      background-color: #fff3d4;
      margin: auto;
      margin-bottom: 10px;
