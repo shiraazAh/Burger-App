@@ -42,6 +42,9 @@
 .OrderButton:not(:disabled) {
     animation: enable 0.3s linear;
 }
+
+/* SECONDARY PRICE BOX */
+
  .tinyBox {
      background-color: #fff3d4;
      margin: auto;
