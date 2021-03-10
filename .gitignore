@@ -11,6 +11,13 @@
 
 # misc
 .DS_Store
+._index.html
+._.DS_Store
+._favicon.ico
+._manifest.json
+._BuildControl.css
+._BurgerIngredient.css
+._burger-logo.png
 .env.local
 .env.development.local
 .env.test.local
